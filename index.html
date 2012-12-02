@@ -1,0 +1,1236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Hippo Fondue : Who says that?</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="HippoFondue is a blog about consulting online, consulting in the real world, dynamic programming languages (Ruby, Python, Scheme), growing your business, and developing your shrinkwrapped product." />
+<meta name="keywords" content="Guru,elance,rentacoder,consulting,programming,ruby,python,scheme,C#,code generation,dynamic programming langauges,optimization,microISV,uISV,software,software companies" />
+<link href="oswd2.css" rel="stylesheet" type="text/css" title="OSWD2 Style" />
+</head>
+
+<body>
+<div id="container"> <!-- <DIV #1> -->
+
+	<div id="header"> <!-- <DIV #2> -->
+		<!-- <h1>Hippo Fondue</h1><br />  -->
+		<img src="img/Hippo-FondueText.png" />
+		<h2>I swear, my wife said it to me.</h2>
+	</div>
+	
+	<div id="core_container"> 
+	  <div id="core_left"> 
+	  	<a href="http://cafepress.com/hippofondue"><img class="column_header_img" src="img/Hippo-fondue4site.png" /></a>
+		  <p><h3>On Your <strong>Shirt</strong></h3></p>
+		  	<p>We are now offering the following shirt designs for sale.  You know you want one.  All designs by <strong><a href="http://nikzen.com">Nikzen</a></strong>.</p>
+				<ul>
+					<li><a href="http://cafepress.com/codeartist" alt="Code Artist"><img src="img/CodeArtist.png" width="180" height="135" /></a></li>
+					<li class="litxt"></li>
+					<li><a href="http://cafepress.com/tylerwears" alt="You are not the clothes you wear"><img src="img/TylerWears.png" width="180" height="135" /></a></li>
+					<li class="litxt"></li>
+					<li><a href="http://cafepress.com/llamawarez" alt="Llama Carbon Copy Wear"><img src="img/llamawarez.png" width="180" height="135" /></a></li>
+					<li class="litxt"></li>
+					<li><a href="http://cafepress.com/fishfight" alt="Fish Club"><img src="img/fishclub.png" width="180" height="135" /></a></li>
+					<li class="litxt"></li>
+					<li><a href="http://cafepress.com/linuxslide" alt="What's your power animal?"><img src="img/linuxslide.png" width="180" height="135" /></a></li>	
+					<li class="litxt"></li>			
+					
+					
+				</ul>			
+	  </div>
+	  
+	  <div id="core_right"> 		
+	  		<h6>You are not your software product. <br />
+	  			You are not your favorite programming language. <br />
+	  			You are not your agile/waterfall methodology. <br />
+	  			You are not Ruby vs. Python flame war.  <br />
+	  			You are not your curriculum vitae.
+	  			</h6>
+	  		<p>~Joshua Volz, <a href="http://www.foxmovies.com/fightclub/">Tyler's</a> words coming out of my mouth.</p>
+			<!--<h6>Random <strong>Thoughts</strong> - some on coding, some not</h6>
+			<ul class="top_ul">				
+				<li><a href="#YOHO">Yo Ho, Me Hearties, Yo Ho</a></li>
+				<li><a href="#UPFP">Using Partial Functional Programming to Simplify and Improve Your Code</a></li>
+				<li><a href="#DSLJG"> Domain Specific Languages Considered Jargon</a></li>
+				<li><a href="#MTNET">Migration to .NET</a>
+				<li><a href="#uISVM">uISV Mistakes</a></li>
+				<li><a href="#LPS">Long Programming Short</a></li>
+				<li><a href="#WPILST">Web Programming and Interpreted Languages are the Same Thing</a></li>
+				<li><a href="#SED">Software Engineer Dissatisfaction</a></li>
+				<li><a href="#CDMPP">Character Density as a Measure of Programming Power</a></li>
+				<li><a href="#RVP">Ruby vs. Python vs. Lisp vs. Smalltalk vs ... X</a></li>
+				<li><a href="#RSIW">Rock Soup, It Works!</a></li>
+				<li><a href="#TPL">Thoughts on programming languages</a></li>				
+			</ul>-->
+			
+			<!--
+			<h6><a name=""> </a>
+			<br /> </h6>
+			<p></p>
+			
+			<h6><a name="rails-distribution-to-production">Rails Distribution to Production</a>
+			<br /> </h6>
+			<p></p>
+			
+			<H6><a name="Ruby-on-Rails-with-gedit">Programming Ruby on Rails with gedit</a>
+			<br /></h6>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			-->
+			<h6><a name="Ruby-on-Cygwin">Ruby, Cygwin, RubyGems and Make</a>
+			<br />2:36pm March 12th, 2008</h6>
+			<p>If you are trying to get Ruby to run on Cygwin and you have a dual installation 
+			with the click-once Windows ruby install, make sure your RubyOpt environment variable 
+			is cleared.  Alternatively you can unset it like so:</p>
+			<p>> unset RubyOpt</p>
+			<p>from within Cygwin.  Undoubtedly the first thing you are going to do once you get 
+			Ruby installed is to get RubyGems working.  Some gems would install and work fine and 
+			some would fail miserably.  Strange errors happened when the Gem was trying to be 
+			compiled for my machine.  I 
+			couldn't figure out what was wrong and Google was no help.  Eventually, I figured 
+			out that nothing was compiling properly because make was failing.  So I checked my 
+			install of Cygwin, and lo and behold make, nor gcc were installed.  That'll stop 
+			compiling dead in its tracks, huh?!</p>
+			<p>I just went through the Cygwin install again and made sure I selected those packages
+			from the Devel section.  After that everything worked.  I'm putting this up so that 
+			nobody else has this problem.  </p>			
+			
+			<h6><a name="arc">Arc by Paul Graham</a>
+			<br />10:55am January 30th, 2008</h6>
+			<p>This might be the most important development in the Lisp community in some time: 
+			Paul Graham has released onto the world his version of Lisp, called Arc.  
+			<a href="http://arclanguage.org/install">[Click here to download it]</a>
+			The main differences are some tricks and alterations that PG found useful and the making 
+			of specific decisions to make the language a "good medium for exploratory programming".</p>
+			<p>I am extremely excited about this language because it seems to have generated some pretty 
+			extensive buzz.  <a href="http://arclanguage.org/newest">[Click here for Forums on Arc]</a>
+			I am hopeful that a nice community will grow around this language.  I personally will be 
+			contributing something, though I am not sure what yet.  I believe that Paul Graham has 
+			enough of an interested following that this language could become something special.  
+			</p>
+			<p>In short, check out Arc. </p>
+			<p></p>
+			
+			<H6><a name="web-programming-on-guru">Web Programming More Profitable for Guru.com Contractors</a>
+			<br />1:12am January 17th, 2008</h6>
+			<p>I have no firm numbers to support it, but I think that there are 10 times as many jobs for web programming 
+			on Guru.com as there are Windows programming jobs.  What I didn't know before trying to get into that market 
+			was that those jobs also paid about 5 times as much and were about half as hard.  
+			</p>			
+			<p>Take a tip from the guy who wanted way too long; switch to where the market is most profitable.  Do so even 
+			if it makes you feel dirty because you are no longer really programming, you are merely web programming.  Get 
+			over that feeling by writing your own web framework or at least working in a language that you want to work in 
+			(like:  Arc {<a href="http://news.ycombinator.com/item?id=98297">coming soon!</a>}, Python, Ruby).
+			</p>			
+			
+			<H6><a name="Ubuntu-over-windows">Ubuntu over Windows</a>
+			<br />12:52am January 17th, 2008</h6>
+			<p>I bought parts to build a new computer.  I needed an operating system.  I do mostly C# .NET programming 
+			but I am moving towards web programming using more open source technology (Ruby on Rails).  I have 
+			Windows XP on my old machine and it has served me well, but I don't want to have to buy another copy of it.  
+			I sure as hell am not putting Windows Vista on it.  That leaves me with few options.  I dig around my 
+			book shelf and find a book entitled "Ubuntu Hacks" which I bought about a year ago.  I flip through it.  
+			I confirm that I can get my dual monitor setup working.  I remember installed Redhat Linux in 1999 and 
+			having to deal with a lot of winmodem issues, but I double check and it's not 1999 and I am blessed with 
+			ethernet.  [Side note: it's so sad I had dial-up then.]  Now, I am starting to like the idea of putting Linux 
+			once again on my computer, and not dual boot this time, I mean the full switch over.
+			</p>
+			<p>I burn my Ubuntu install CD.  I put my computer together, even substituting an 8 year old CDRW for the DVD 
+			burner that hasn't arrived yet.  I put the CD in.  I get to test drive Linux.  It's easy and the video drivers 
+			work without me even doing anything.  HMMM..can't be that easy, how come Microsoft is still in business?  I 
+			install Ubuntu.  I do nothing at all and it does all the work for me.
+			</p>
+			<p>I have Ubuntu installed and it's working great.  I get all the updates that it automatically notifies me of. 
+			I get the update for the nvidia card I have (properietary Ubuntu warns me) and I change the config file so 
+			that it maps across my two monitors using the hardware in the card, the OS has no idea.  I get the 2nd hard drive 
+			mounted.  All in all, installation takes me maybe an hour.  Everything just works.  I start checking out the programs 
+			available on Ubuntu.  It has everything I need.  The only thing missing is Ruby and Rails.
+			</p>
+			<p>With modest effort I get those on the machine and working.  "apt-get" is the greatest thing ever.  I'm off to 
+			the train yard doing Rails development.  
+			</p>
+			<p>How is Microsoft not losing market share to Linux?  There are companies that support Linux, so you can't make 
+			the "I need support" argument and anyway when was the last time you called Microsoft for support?  If my mom can 
+			use a max with OS X (a.k.a. secret Unix that works with modern hardware) on it then I am certain that most normal 
+			people could use Ubuntu Linux.  
+			</p>
+			<p>I was going to do a whole series of articles on my transition to Linux and how it was coming along.  Too bad for 
+			me that Linux is so easy to use.  Seriously, I love the shell.  There is nothing more joyful than being able to make 
+			things easier for yourself by writing simple scripts.  Screw DOS prompts.  
+			</p>
+			
+			
+			<h6><a name="divergent-language-design">Divergent Language Design: Single Author vs. Groups</a>
+			<br />7:01am December 18th, 2007</h6>
+			<p>As I read <a href="http://groups.google.com/group/comp.lang.python/msg/28422d707512283">this article</a> concerning 
+			the difference (or lack thereof) between Ruby and Python it occurred to me that there might be two types of programming 
+			languages, or at least there ought to be two types.  Usually languages are viewed on a continuum from worst to best or 
+			most powerful to least powerful.  These continuum are highly subjective, focusing on the type of programming that 
+			the creator of the list is often engaged in.  Alex Martelli in the article says:				
+			</p>
+			<p>"For the purposes of meta programming, implementing
+			experimental frameworks, and the like, this amazing dynamic
+			ability of Ruby is _extremely_ appealing.  BUT -- if we're
+			talking about large applications, developed by many people
+			and maintained by even more, including all kinds of libraries
+			from diverse sources, and needing to go into production in
+			client sites... well, I don't WANT a language that is QUITE
+			so dynamic, thank you very much.  "</p>
+			<p>This is probably the most important and telling example of the dichotomy that I believe exists in language design.  
+			Some languages are designed for a single programming to be productive and some are designed to allow for a team of 
+			people to be able to collaborate.  Alex Martelli is effectively saying that if someone else is going to work on his project 
+			then he doesn't want them to be able to alter the basic assumptions it is built upon.  It is even pointed out that 
+			for meta programming and experimental frameworks it is often a positive to have this much control.  The implied caveat 
+			here is that most of those experimental activities are undertaken by someone working on something they are interested 
+			in, on their own time, alone.  </p>			
+			<p>This is also evidenced by the divide between strong typing and weak typing.  The strong type advocates 
+			want the guarantee that nobody else is going to hose up their code, at least not by calling it with the wrong type 
+			of arguments.  This situation is ideal for a programming language that is being used over an entire organization 
+			in order to produce a large code base with many facets.  On the other hand, if you are the only person using the code 
+			you are writing then you don't really need to make sure that the unknowing programmer 3 cubicle rows over isn't going to call your 
+			function with inappropriate arguments.  The whole purpose of "bondage" programming is to keep other people from 
+			messing up your code.  If nobody else is messing with your code, then you can gladly make the changes that you want.</p>
+			<p>Is it any wonder that the more "powerful" and "dynamic" languages allow for changes to the language themselves, or 
+			at the very least have some facility for the production of domain specific languages?  The more flexible the language 
+			the more danger there is with collaboration because of the possible overlap of effects (for example the dynamic changing of 
+			base classes, like the string class).  Domain specific languages by definition are making a new language on top of the 
+			implementation language, thus extending the possibility that not everyone would be on the same page.  </p>
+			<p>To combat the endless mixed comparisons between languages we should make (at least) two categories of programming 
+			languages, starting by separating those intended for team collaboration from those that are intended for the super 
+			programmer to accomplish something in a short period of time.  I don't think we should even be arguing whether Java or 
+			Lisp or Ruby or C# or C++ or [insert your favorite language here] is more or less powerful until we have at least 
+			defined some of the parameters of the discussion.  Some languages are clearly meant for collaborative, distributed work.  
+			Others have features which are powerful and that power makes them less suited to large group collaborative projects.</p>
+			<p>If we as a profession are really interested in making progress we need to start looking at languages in the way that 
+			we use them instead of the way they are normally differentiated (static vs. dynamic typing, functional vs. object orientated, 
+			on and on forever).  There are two, maybe 3 ways that programming languages are used.  The first is the lone programmer.  
+			The second is the small group of lone programmers.  Finally, there are the collaborative groups that produce 
+			larger scale software.  
+			Each clearly has different needs from their programming language, with the possibility that the second group is small enough 
+			that they can pretend they are a single programmer because they either communicate so well, or are so adept at 
+			programming that it overcomes any possible drawbacks of using the more powerful, but less collaborative language.  Frankly, 
+			I'm not sure there is a lot of difference between 1 great programmer and 3 great programmers working together.  Once you 
+			get away from great programmers, and start moving towards normal programmers you not only increase the communication barrier 
+			but you drastically reduce the individual programmer's ability.  
+			</p>
+			<p>Long story short, we should investigate whether we as a profession are oversimplifying our categorization of programming 
+			languages so that they are forced onto a single continuum.  Why can't we use one language in the case where we are 
+			working alone, and one in the case where we have to work with 300 other programmers?  Is it so wrong to suggest that 
+			maybe a different solution is needed for different problems?
+			</p>
+			
+			
+			<!--<h6><a name=""></a><br /></h6><p></p><p></p>-->
+			<h6><a name="Releasing-Early-and-Often-is-Hard">Releasing Early and Often is Hard</a><br />10:01am August 17th, 2007</h6>
+			<p>Everyone says release early and often.  Everybody says it results in a better product, and more energized users.  
+			Everybody says that getting it in front of your customers is like super-mega-dog-fooding.  I tend to agree with 
+			everyone.  It's common knowledge and common sense for a reason.  
+			</p>
+			<p>Here's the problem:  nobody says how to do it best.  Nobody is out there talking to you about how you handle 
+			developing new features along with fixing bugs in your "current" release.  The new features delay bug fixes because 
+			you only have one code base, and you're only one person.  Nobody says be ready for a deluge of bug reports and 
+			new features requests.  Nobody warns you how obvious those requests are and how they make you feel foolish.  Worse yet 
+			sometimes you realize your entire approach is flawed and requires a redesign (see <a href="rewriting-is-good">rewriting is good</a>).			
+			</p>
+			<p>How come nobody talks about this?  How come nobody is out there talking about a system to integrate your bug tracking, 
+			feature additions and enhancements and coordinating that with your version control system, your nightly build system and 
+			your deployment system?  Remember, you're only one person.  Wouldn't it be nice if there wasn't so much duplicated work 
+			for things that are obviously best practice (version control, custom build systems, unit testing, product keys, product key deliver, 
+			payment acceptance, automated product updates, content management for your website, etc.).  All these things exist.  All 
+			of them are pretty well understood.  All of them are pretty much accepted as best practice.  So how come I'm having to 
+			make all of them myself, or worse, buy someone else's and then integrate them together myself?
+			</p>
+			<p>Is that opportunity I smell?
+			</p>
+			
+			<h6><a name="rewriting-is-good">Programmer's Note: Rewriting is Natural</a><br />12:40am August 17th, 2007</h6>
+			<p>You are going to have to rewrite code.  You are going to have to redesign portions of your code.  Something unexpected 
+			is going to happen.  Get used to it.  Plan for it.  If this is your first time writing this software, plan to write it again.  
+			Your first attempt isn't good enough for commercial software (in general) unless your problem is extremely easy, which 
+			means you already have lots of competition and you aren't going to want to make this software anyway.  Deal with it. </p>
+			<p>Common sources of having to rewrite a section of your code:  <br />(1) changing requirements (aka "Oh, yeah, and it has to 
+			read and write email and have a calendar") <br />(2) performance issues (aka "Of course it's slow when you open a file that is larger than 
+			the RAM you have available on your machine") <br />(3) 
+			space issues (aka "what do you mean it doesn't fit on a CD?") <br />(4) 3rd party product changes (aka "what do you mean our 
+			PDF plugin doesn't support graphs?") </p>
+			<p>I'm just saying ... be prepared.
+			</p>
+			
+			
+			<h6><a name="pmarca-productivity-application">pmarca Productivity Tracker</a><br />6:48am August 6, 2007</h6>
+			<p>After reading an excellent productivity <a href="http://blog.pmarca.com/life_hacks/index.html">blog post </a>by Marc Andreessen
+				<a href="img\pmarca_productivity_app.jpg">
+				<img src="img\pmarca_productivity_app_small.jpg" style="Float:left;border: none;margin:5px;"/></a> I mocked up an application that would allow me 
+				to implement his version of the 3 list scheme (ToDo, Watch, Later).  I referred to them in the software as Active, Waiting 
+				and Archived respectively.  Following good mISV tendencies, I made the absolute minimum product that would do the job for me.  
+				My version includes the ability to attach and view notes to each project or activity in any of the lists.  				 
+			</p>
+			<p>This is by no means break through software, but I have to tell you that it has made keeping track of my various projects 
+			and activities much easier.  I also cannot express the sense of excitement (relief?) I feel when I put a task or project into 
+			the Archived list.  In my mind, that means it is gone forever.</p>
+			<p>I just wanted to publicly thank Mr. Andreessen for his suggestions.  </p>
+			
+			<h6><a name="">Update on Python Metaprogramming</a><br />3:28am August 5, 2007</h6>
+			<p>It has come to my attention that I made a mistake of "flavor" in my previous post entitled 
+			<a href="#Fun-with-Python-Metaprogramming">Simple Python Metaprogramming</a>.  Apparently, it is 
+			not recommended for someone to access the __dict__ attribute directly, and instead there are a pair of 
+			methods normally used for this operation (setattr and getattr).  I have, therefore, rewritten the 
+			previous examples using those methods.
+			</p>
+			<p class=code>
+			class&nbsp;game:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;name='',&nbsp;url=''):<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name&nbsp;=&nbsp;name<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.url&nbsp;=&nbsp;url<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.publisher&nbsp;=&nbsp;''<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.developer&nbsp;=&nbsp;''<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.genre&nbsp;=&nbsp;''<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.releaseinfo&nbsp;=&nbsp;''<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.description&nbsp;=&nbsp;''<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.image_urls&nbsp;=&nbsp;[]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.file_storage_directory&nbsp;=&nbsp;''<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.download_files&nbsp;=&nbsp;[]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__str__(self):<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;=&nbsp;''<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keys&nbsp;=&nbsp;self.__dict__.keys()<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keys.sort()<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;attr&nbsp;in&nbsp;keys:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;getattr(self,&nbsp;attr).__class__&nbsp;==&nbsp;[].__class__:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;itm&nbsp;in&nbsp;getattr(self,attr):<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;+=&nbsp;"%s&nbsp;:&nbsp;%s\n"&nbsp;%&nbsp;(attr,&nbsp;itm)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;+=&nbsp;"%s&nbsp;:&nbsp;%s\n"&nbsp;%&nbsp;(attr,&nbsp;getattr(self,attr))<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;s<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<br />
+def&nbsp;read(s):<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"""&nbsp;s&nbsp;is&nbsp;a&nbsp;string&nbsp;created&nbsp;with&nbsp;__str__.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;a&nbsp;game&nbsp;with&nbsp;attributes&nbsp;set<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"""<br />
+&nbsp;&nbsp;&nbsp;&nbsp;g&nbsp;=&nbsp;game()<br />
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;line&nbsp;in&nbsp;s.splitlines():<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(attr,&nbsp;val)&nbsp;=&nbsp;line.split('&nbsp;:&nbsp;')<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;getattr(g,&nbsp;attr).__class__&nbsp;==&nbsp;[].__class__:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getattr(g,attr).append(val)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setattr(g,&nbsp;attr,&nbsp;val)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;g<br />
+			</p>
+			<p>Sorry for any confusion this may have caused.  I do admit there is still a __dict__ reference remaining.  I 
+			felt this was cleaner than using the dir() command and then removing all the attributes that begin with double 
+			underscore.  I'm not sure if this is standard Python activity or not, but I've found it helpful as an exercise 
+			because it has taught me a lot about introspection of Python objects.
+			</p>
+			
+			<h6><a name="Consulting-Business-Lessons">Business Lessons I Have Learned by Consulting</a><br />10:57pm July 28th, 2007</h6>
+			<p>
+				<ul>
+					<li>The challenge isn't finding customers.  It's finding good customers.</li>
+					<li>Everybody wants their software yesterday.  You're already late.</li>
+					<li>Mostly, they don't care what language you use, or about your cute implementation.  They don't need a 
+					craftsmen, they need software.</li>
+					<li>Work for businessmen, not people pretending to have a business.</li>
+					<li>Fire your bad customers.  Or try to give them to your worst enemy.</li>
+					<li>Customers who pay less on time are more important than customers who pay more never.</li>
+					<li>Keep bidding.  Do not ever stop.</li>
+					<li>Find a market niche.  Dominate it.  Even in consulting there are niches.</li>
+					<li>Anyone that you can hire is either transitioning to becoming their own boss or not good enough.</li>
+					<li>Bidding is actually an art form.</li>
+					<li>It's easier to buy or borrow than to write it all yourself. (Anti-NIH Syndrome)</li>
+					<li>You can win bids in a world market.</li>
+					<li>There is a 3:1 ratio of web to installed programs work.  Keep that in mind when you learn a new technology.</li>
+					
+				</ul>
+			</p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+						
+			<h6><a name="Fun-with-Python-Metaprogramming">Simple Python Metaprogramming</a><br />10:18pm July 28th, 2007</h6>
+			<p>So the other day I was trying not to type a bunch of code, and in my laziness I found out 
+			about the __dict__ attribute of Python objects.  Basically, it lets you do metaprogramming on  
+			the attributes of your object by name.  Again, since I'm lazy, I like to avoid typing.  I was 
+			going to type out the __str__ method for my object, listing every attribute, and then displaying its 
+			value, but I decided that maybe I could cheat a little.  I came up with the following:</p>
+			<p class=code>
+			class&nbsp;game:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;name='',&nbsp;url=''):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name&nbsp;=&nbsp;name<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.url&nbsp;=&nbsp;url<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.publisher&nbsp;=&nbsp;''<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.developer&nbsp;=&nbsp;''<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.genre&nbsp;=&nbsp;''<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.releaseinfo&nbsp;=&nbsp;''<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.description&nbsp;=&nbsp;''<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.image_urls&nbsp;=&nbsp;[]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.file_storage_directory&nbsp;=&nbsp;''<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__str__(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;=&nbsp;''<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keys&nbsp;=&nbsp;self.__dict__.keys()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keys.sort()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;attr&nbsp;in&nbsp;keys:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.__dict__[attr].__class__&nbsp;==&nbsp;[].__class__:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;itm&nbsp;in&nbsp;self.__dict__[attr]:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;+=&nbsp;"%s&nbsp;:&nbsp;%s\n"&nbsp;%&nbsp;(attr,&nbsp;itm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;+=&nbsp;"%s&nbsp;:&nbsp;%s\n"&nbsp;%&nbsp;(attr,&nbsp;self.__dict__[attr])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;s<br>
+			</p>
+			<p>I like this technique because it can be used to store the contents of your object to a file for later use.  In order 
+			to use them later though, you have to have a way to read it back into an object.  Effectively an inverse function 
+			of the __str__ function.  Again being lazy, I used metaprogramming:</p>
+			<p class=code>
+			def&nbsp;read(s):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"""&nbsp;s&nbsp;is&nbsp;a&nbsp;string&nbsp;created&nbsp;with&nbsp;__str__.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;a&nbsp;game&nbsp;with&nbsp;attributes&nbsp;set<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"""<br>
+&nbsp;&nbsp;&nbsp;&nbsp;g&nbsp;=&nbsp;game()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;line&nbsp;in&nbsp;s.splitlines():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(attr,&nbsp;val)&nbsp;=&nbsp;line.split('&nbsp;:&nbsp;')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;g.__dict__[attr].__class__&nbsp;==&nbsp;[].__class__:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.__dict__[attr].append(val)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.__dict__[attr]&nbsp;=&nbsp;val<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;g<br>
+			</p>
+			<p>I'm not suggesting using this on a large scale basis.  I'm somewhat new to Python, but I believe there is a 
+			process called pickling that can be used for this same purpose.  It performs object serialization, where I am 
+			merely putting together a simple string representation of my object.  Pickling is undoubtedly better for 
+			larger objects, or objects that cannot be represented easily as a string or other basic type.  I do think 
+			this example is valuable because if you later have to add another attribute you can do so without have to 
+			alter the __str__ or read methods.
+			</p>
+			<p>Metaprogramming seems to me to be a way of taking advantage of information that is inherent in your code 
+			but that you may not have previously thought of as "program" information.  The names of classes, variables, 
+			methods, and other inherent program information (like inheritence trees and interfaces) are all useful 
+			metadata when you have the opportunity to use them.  That is to say nothing of the ability to change objects 
+			on the fly, create custom role specific objects (called "Singletons" in Ruby, not to be confused with the 
+			anti-pattern singleton global reference) and the variety of other tools that metaprogramming facilities 
+			provide.
+			</p>			
+			<p>I often try to explain to other 
+			people why metaprogramming is useful, and it's hard to come up with a reasonable, concrete example so that 
+			others can see what you are talking about.  My purpose in this article was to show an example that I've 
+			used, allowing others to see the example.  I admit it is not that complex and it's not groundbreaking 
+			in any way, but I think it is a good example for someone who has no experience in metaprogramming or 
+			its possible benefits.
+			</p>
+			
+			<h6><a name="random-csharp-idea">Random C# Idea</a><br>3:41 March 7th, 2007</h6>
+			<p>I was sitting at my computer the other day, pondering what could be done to improve the ease of 
+			use for C#.  I was mostly annoyed that it didn't have multiple returns, or even some way to group 
+			a couple of items together and easily get back the values in a calling method.  I was also thinking 
+			about anonymous methods and how fun they are.  Those two ideas crashed together to make something 
+			new that I am calling anonymous types.  It's similar to duck typing, but I think it could be 
+			easily implemented in C# via a pre-compilation macro expansion.  Here's some code (please forgive the word wrapping):</p>
+			<p class="code">
+			<span class="keyword">public </span><span class="keyword">object </span>GetMyValues(){<br>
+&nbsp;&nbsp;<span class="keyword">return </span><span class="keyword">new anonymous object</span>(<span class="keyword">int </span>firstVal, <span class="keyword">int </span>secondVal){ firstVal = 10; secondVal = 5};<br>
+}<br>	
+<br>
+<span class="keyword">public </span><span class="keyword">void </span>UsageOfAnonymousObject(){<br>
+&nbsp;&nbsp;<span class="keyword">object </span>anon = GetMyValues();<br>
+&nbsp;&nbsp;MessageBox.Show(String.Format("{0} : {1}", anon.firstVal, anon.secondVal));<br>}
+			</p>
+			<p>I threw a new keyword in there, anonymous.  The idea being that it marks that object as an anonymous object, but that should be 
+			expanded by the compiler before compiling the code.  The stuff after the object is effectively the constructor to that object along 
+			with some initialization.  That gives the compiler enough information to rewrite the code to something like:
+			</p>
+			<p class="code">
+			<span class="keyword">public </span><span class="keyword">class </span>AnonymousObject{<br>
+&nbsp;&nbsp;<span class="keyword">private </span><span class="keyword">int </span>_firstVal;<br>
+&nbsp;&nbsp;<span class="keyword">public </span><span class="keyword">int </span>firstVal {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">get{</span>	 <span class="keyword">return </span><span class="keyword">this</span>._firstval;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">set{</span>	 <span class="keyword">this</span>._firstVal = value; }<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">private </span><span class="keyword">int </span>_secondVal;<br>
+&nbsp;&nbsp;<span class="keyword">public </span><span class="keyword">int </span>secondVal {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">get{</span>	 <span class="keyword">return </span><span class="keyword">this</span>._secondVal;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">set{</span>	 <span class="keyword">this</span>._secondVal = value; }<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">public </span>AnonymousObject(<span class="keyword">int </span>firstval, <span class="keyword">int </span>secondval){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_firstVal = firstval;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_secondVal = secondval;<br>
+&nbsp;&nbsp;}<br>
+}<br>
+<br>
+<span class="keyword">public </span><span class="keyword">object </span>GetMyValues(){<br>
+&nbsp;&nbsp;<span class="keyword">return </span><span class="keyword">new </span>AnonymousObject(10, 5);<br>
+}<br>
+<br>
+<span class="keyword">public </span><span class="keyword">void </span>UsageOfAnonymousObject(){<br>
+&nbsp;&nbsp;AnonymousObject anon = GetMyValues();<br>
+&nbsp;&nbsp;MessageBox.Show(String.Format("{0} : {1}", anon.firstVal, anon.secondVal));<br>
+}
+			</p>
+			<p>
+			Why is this useful?  Well, I'm lazy, so I don't like to type more than I have to when I could instead invent a 
+			new construct that will take care of the busy work of typing out an object to hold two values that'll never 
+			be used again.  I think this would eliminate a lot of cruft that exists to move data around because of the 
+			limitations of C# v2.0.  
+			</p>
+			<p>Postscript:  I have no idea if this kind of thing has existed somewhere else before.  I am sure that 
+			I am borrowing concepts (macro expansions, anonymous methods) from existing programming languages.  If this 
+			is in C# v3.0 and I just don't know about it, all the better for me.
+			</p>
+			
+			
+			<a name="reduce"><h6>Fun with reduce in Python and Boo<br>9:09pm Feb 7th, 2007</h6></a>
+			<p>The other day I was trying to work out a very complex calculation, and it seemed naturally suited 
+			to a functional approach using closures.  So, I break out my DrScheme editor and I go to work.  Happily, 
+			I type away, knowing that I am going to have to translate some or most of what I am writing to either 
+			Python or Boo.  I know this because the project that uses this calculation has several different parts 
+			made up of one of those languages, and I would rather not introduce yet another language into the mix.			
+			</p>
+			<p>[Side Note:  Boo is excellent language if you are making Windows Forms programs and want to use something 
+			similar to Python.  It is excellent at letting you bang out a quick prototype and appears to be relatively 
+			stable.  The only thing about the language that falls a little short for me is the type inference.  Once 
+			they get that working a little better, I will likely start doing an increasing amount of "we don't care what 
+			language it's done in" consulting projects using Boo.  Check out <a href="http://boo.codehaus.org">Boo</a>]
+			</p>
+			<p>As I am writing my Scheme, I notice that reduce is going to be central to making the code succinct.  I 
+			decide that I need to make sure that reduce is available in Python and Boo, thinking that it will surely be there 
+			and it won't be a worry.  Turns out that Boo is missing reduce altogether and Python makes it interesting 
+			because of the weak lambda functionality.
+			</p>
+			<p>First, some Boo: </p>
+			<p class="code">
+			def reduce(f as callable, lst as List, init):	<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;for item in lst: <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;init = f(init, item)<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;return init<br>
+			</p>
+			<p>This version of reduce takes a function ("callable"), a List, and an initialization.  I could default the 
+			initialization, but I didn't need it for this particular implementation.  I should also note that this 
+			function might have to be rewritten (or more generally written) with IEnumerable in place of the List.  
+			I would also caution that this version when using an object as the init will change state on that object 
+			if the callable has side effects.  For my purposes, this was okay because I was working with pass by value init 
+			values.  You will also notice that the method body is almost entirely devoid of types.  It does require that 
+			the callable takes two arguments, but that is to be expected.  This leads to the maximum amount of flexibility 
+			when using the function.  You can use this reduce function as follows: 
+			</p>
+			<p class="code">
+			reduce({x as int ,y as int| return x*y}, [1,2,3,4,5], 1)
+			</p>
+			<p>You will notice that you must stipulate the types of the two arguments in the anonymous function.  If you don't 
+			Boo will assume they are objects and act accordingly, which will cause the above example to fail.  I figure it 
+			a small consolation to have to stipulate the types in the anonymous function if I don't have to rewrite reduce 
+			for a bunch of different types.  Note that you can write multiline anonymous functions in Boo (examples: 
+			<a href="http://boo.codehaus.org/Closures">here</a>).
+			</p>
+			<p>Python fairs better in that it provides a reduce function out of the box.  However, in contrast to Boo 
+			Python does not allow for multiline anonymous functions.  This problem is mitigated by the fact that you can 
+			simply define another function internal to the function are currently in.  Here's a lambda example for Python:
+			</p>
+			<p class="code">reduce(lambda x,y: x+y, [1,2,3,4,5])</p>
+			<p>This code works pefectly well, as intended.  However, due to the limitations of lambda, this code fails:</p>
+			<p class="code">reduce(lambda x,y: return x+y, [1,2,3,4,5])</p>
+			<p>Okay, no problem, but what if I want to use a named function instead of a lambda.  I write the named function 
+			and then I call it in the lambda as below:</p>
+			<p class="code">
+			def sum(x,y):<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;x + y<br>
+			<br>
+			reduce(sum, [1,2,3,4,5])
+			</p>
+			<p>I was mildly surprised to find that this didn't work, since I thought I had substituted a reasonable named 
+			function.  However, it occured to me that lambda is very different from a named function, so I had better put 
+			in the return as follows:
+			</p>
+			<p class="code">
+			def sum(x,y):<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;return x + y<br>
+			<br>
+			reduce(sum, [1,2,3,4,5])
+			</p>
+			<p>This appears to work fine and is another reminder to me to be careful when I am trying to use lambda in Python.
+			</p>
+			<p>Based on this experiment, it is likely that I am going to use Python to do the calculations because it has built 
+			in reduce and I can easily use internal function definitions to take the place of multiline lambdas.  Once I make 
+			the conversion I might have to post the results of some key areas with examples in both Python and Scheme.
+			</p>
+			<p>As a side note, it is somewhat startling to me how easy this is to do in Scheme, and how difficult it is to do 
+			in other languages.  I am not sure if the problem I am working on is just particularly suited to functional programming 
+			or if I am stuck in thinking about it from a Scheme perspective, and just trying to translate that to another language.  
+			There might be something to this theory that learning alternative programming languages changes the way you 
+			<strong>are able</strong> to think about problems.
+			</p>
+			
+			
+			<h6><a name="consulting-to-shrinkwrapped-software">Why Consulting is a Good Way to Start a Shrinkwrapped Software Company</a>
+				<br>7:30am Feb 1st, 2007</h6>
+			<p>Consulting is a good way to start a shrinkwrapped software company.  It is particularly good if you 
+			are unsure what market you want to enter with your shrinkwrapped product.  Products are born out of the 
+			needs of your customers.  Consulting is a good way to start because it gives you the flexibility to work 
+			with a lot of different customers in a lot of different industries.  It also has the nice side effect of 
+			paying the bills while you get your product developed.  If you simply must start your microISV today, 
+			consulting is a good way to start because of the instant income.  
+			</p>
+			<p>I am not alone in believing that you can 
+			grow a shrinkwrapped product out of a consulting company.  Joel Spolsky discusses his 
+			journey through consulting to his product <a href="http://www.foundersatwork.com/joelspolsky.html">here</a>. 
+			In Joel's case, consulting was a means to an end.  The end came sooner than he had expected because of the 
+			dotcom bust.  The consulting work dried up with the downturn.  He was forced into releasing his product 
+			sooner than he had anticipated.  In truth, it seems the product his company is most famous for (FogBugz) 
+			is not even really the product that he wanted to make.  He just happened to have it ready to go when 
+			people were asking for it.  Consulting gave him the time to build up his product (even though at the time 
+			he didn't realize it would be his biggest product) without having to risk nearly as much.
+			</p>
+			<p>This core idea, which Joel ascribes to ArsDigita, is now central to the birth of several microISVs.  It 
+			provides a lower risk alternative to experienced programmers than simply quitting their job and writing a 
+			product.  The consulting revenue is easy enough to live on while you are sharpening your product.  But the 
+			real benefit of consulting while you are making shrinkwrapped software is that you get to experience the 
+			pain of several types of customers in several types of industries.  This allows you a broader view of 
+			what customer's needs are, even across industries than you could garner working as an employee.  
+			</p>
+			<p>Volz Software is following this path.  Consulting revenue is what pays for my life while I develop 
+			shrinkwrapped products (like <a href="http://www.llamacarboncopy.com">Llama Carbon Copy</a>).  I find 
+			that I am identifying similar points of strain in businesses as diverse as mortgage processing and health 
+			care.  These points of strain are opportunities.  Finding them is like finding little nuggets of gold in 
+			a stream in 1849 California.  The difference is that a single nugget, properly polished can yield an entire 
+			bank full of money.  
+			</p>
+			
+			<h6>A Small Tip for Guru.com<br>8:30pm Jan 31st, 2007</h6>
+			<p>Try to avoid any jobs that in their listing use any of the following phrases or their isomorphs:
+			</p>
+			<div style="padding-left:2em;">
+			<p>"Very simple program to write"</p>
+			<p>"I've seen the code online"</p>
+			<p>"Very easy and quick project"</p>
+			<p>"I need a small program to..."</p>
+			</div>
+			<p>Always be cautious with this kind of job because the employee has already devalued the job in their 
+			own mind.  Particularly be careful with jobs that have one or more of these indicators, and a maximum bid amount 
+			of $250 or less.
+			</p>
+			<p>This rule is by no means universal, but it has kept me from bidding on some obvioulsy time consuming projects 
+			that are only going to yield a very small amount of money, particularly when I calculate my hourly rate.
+			</p>			
+			
+			<h6><a name="python3000">The Direction of Python 3000</a><br>3:30am Jan 28th, 2007</h6>
+			<p>I am learning Python.  I have been on a scripting language learning kick for about a year now.  I have spent a good amount of time 
+			learning Python and Ruby.  My focus has been on learning more about their metaprogramming capabilities.</p>
+			<p>Guido (the creator of Python, also referred to as "the Benevolent Dictator for Life") is in the midst of working on Python 3000, 
+			a non-backward compatible break from previous versions of Python.  Over at 
+			Lambda the Ultimate, their is an <a href="http://lambda-the-ultimate.org/node/587">article</a> that talks about Guido's intended 
+			removal of some of the functional aspects of Python, specifically in this case, referring to the removal of reduce() from the language.  
+			I personally feel that leaving these constructs in is vital to the life of Python, even though I have only been working in the language 
+			for a couple of months.  With these functional constructs you invite the use of higher order functions when they are appropriate.  
+			Without them, the first things everyone is going to write in their Python libraries are: map, reduce, filter, remove-if, and sort 
+			(Note: I am borrowing some names from Lisp here).  Wouldn't we rather have built in support for these constructs?  
+			These constructs would be more powerful if lambda was extended to be more than a single line, 
+			and allowed for the use of things other than pure expressions.  I know this type of extension is possible in Python-like syntax because Boo
+			provides a multiline lambda equivalent (called "do").</p>
+			<p>Really, this redesign is only a problem because new constructs cannot be created in Python.  You cannot extend the langauge 
+			itself, as easily as you can in Lisp/Scheme.  With no macro support Python is simply not as easy to extend as Lisp/Scheme.
+			Shouldn't it be a clue that the extensible nature of a language is lacking if people are fighting over what is in or out of a language 
+			in the next version?  It's unlikely you would hear a fight about this in any thread on Lisp because anyone with some time on their 
+			hands can easily implement the higher order constructs through macros.  Again, I know this sort of syntactic macro support is 
+			possible because Boo provides it.  </p>
+			<p>Some of these functions can be replaced by the use of list comprehensions.  It may be the case that I am 
+			simply complaining because I want different ways to do the same thing; something that is 
+			common in the Ruby culture, but not in the Python culture.  I believe the functional methods that are currently part of Python 
+			are part of what makes Python so flexible and beautiful.  Removing functionality for the sake of "ease of use" or homogeninity is 
+			useful when programming for end users, not when you are programming for the ultimate in power users: programmers themselves.</p>
+			
+			<h6><a name="learning-new-languages-through-contracting">Learning New Languages Through Contracting</a><br>2:49am Jan 28th, 2007</h6>
+			<p>I'm a contractor more and more, so I take a different approach to learning new programming languages.  I evaluate a technology not 
+			only based on its technical factors, but on how much money I can make with it.  That means taking into account how many other people 
+			are using it, what the pay rate 
+			for that technology is, and the amount of jobs in that technology.  As a contractor I have the advantage of seeing lots and lots of jobs, 
+			which can help to give me a better overview of what types of jobs are available out there.  I am in the midst of categorizing common 
+			types of programming that are called for in small contracts (in my case, on Guru.com).  
+			</p>
+
+			<p>Once I identify an existing / emerging market for a particular piece of software, I try to narrow down the technologies used for that market.  
+			An example: lots of people seemingly need web spiders, usually for specific websites and types of information.  Normally, these people are 
+			using Windows, and also don't care what language you write it in, as long as they get what they want.  
+			</p>
+
+			<p>This is the perfect market for you to learn a new scripting language in.  Ruby, Perl, Python, Boo* or [insert scripting language you are curious 
+			about] are all welcome here as long as you can get them to run on Windows.  If you have no experience in the language you have decided 
+			to target (almost a personal taste choice) then try to get one of these jobs, and make it a small one.  Don't worry as much about money 
+			for the first job, just get some experience.  If you pull it off, you get a good reference and experience in that language with that problem space.  
+			The next job will make you money because you have experience in both the problem space and the language (not to mention the 
+			possibility of existing code).  
+			</p>
+
+			<p>In this way, I try to let the market determine what the next thing I learn is going to be.  If I find a market that has a lot of opportunity, I want 
+			to try to dominate that market, almost to the point where I am selling a customizable stand-alone solution, even though the jobs might vary somewhat 
+			(think producing your own domain specific language for that problem space in your target language).  In our example, this would be writing a DSL 
+			to support the acquiring, searching and cataloging of web page information (links, phone numbers, addresses, names, domains, files, file types, etc.).  
+			</p>
+
+			<p>This technique has the added side effect of making your contracting jobs more profitable as you do more of them.  </p>
+
+			<p>Also, don't be afraid to learn something new.  Spending the time to learn something new isn't ever a waste in my opinion.  Reviewing alternative 
+			languages is always helpful because it can give you a better perspective on your favorite languages.  Learning new programming techniques always 
+			increases your general knowledgebase, allowing you to make more educated decisions for your customer.  Learning something new shouldn't even be 
+			thought of as a chore.  
+			</p>
+
+			<p>*Boo (http://boo.codehaus.org) is a Python syntax-like, .NET framework based, extensible programming language.  It also has a plugin for 
+			SharpDevelop, the open source Visual Studio.
+			</p>
+
+			<h6><a name="simplicity-vs-complexity-vs-a-3rd-option">Simplicity vs. Complexity vs. A 3rd Option?<br>6:41pm Jan 9th, 2007</h6>
+			<p>First, read the <a href="http://www.jnd.org/dn.mss/simplicity_is_highly.html">Donald Norman</a>, 
+			<a href="http://www.joelonsoftware.com/items/2006/12/09.html">Joel Spolsky</a> and 
+			<a href="http://www.zedshaw.com/rants/fortune_favors_big_turds.html">Zed Shaw</a> 
+			articles that discuss this topic.</p>
+			<p>Ok, welcome back.  As Zed correctly pointed out it isn't Simplicty vs. Complexity.  It's something else.  
+			He alludes to it being something that is a simple set of rules or actions that when combined together
+			create a flexible and powerful system for the user.  I am going avoid pointing out that Lisp has but seven core 
+		 	functions and from those develops into a powerful (some say most powerful) programming language.  Long story 
+		 	short, Zed's right, but he doesn't come out and say it.  
+			</p>
+			<p>You see, the issue is that you have to create something that is *simple* to use, but that is capable of *complex* 
+			interactions.  I would argue that most of the successful end-user software in the world falls into this category.  Excel, 
+			for example, is very simple to use compared to its expressive power.  Word is simple to use assuming you are doing something
+			straightforward, but it doesn't prevent you from using more complex and powerful functions if you need them.  Outlook is 
+			simple to use once you have it setup (that's what we have IT people for, right?).  Want your email? Click the button.  Want to 
+			write an email, click "new" and start typing.  Want to create an appointment on your calendar?  Double click on the day.  
+			These are all simple acts that yield powerful results. 
+			</p>
+			<p>Humans, in their infinite wisdom, are very good at overusing an undercapable piece of software (my evidence for this is 
+			Excel itself, I've seen people effectively implement relational database mechanisms in Excel, and they weren't programmers).  
+			37Signals has figured this out.  They don't need to provide capabilities for every possible situation, they just have to 
+			provide basic, general constructs and then let the user shoehorn their use into those general constructs.  You can use a 
+			blank textbox with no validation for a lot of things.  Need to make an appointment?  Type the time and date.  Need to make a 
+			list?  Just type in the numbers as you go.  Need to save a little bit of information (a URL, phone #, or address)?  Just type it in.  			
+			</p>
+			<p>Google's search engine is possible the most blatant example of this.  Incredibly easy to use, ridiculously powerful when 
+			given complexity by the user.  Think about what you can find on Google: Movies time, the actual time, directions, companies, 
+			information about plants, girlfriends, boyfriends, old school mates, yourself, banking information, cultural information, a 
+			picture of your house from space, and seemingly unending ads about what you are looking for.  Every person who can type 
+			can use Google.  It provides a really simple interface and really complex power.
+			</p>
+			<p>Humans really only use software, particularly business software for a couple of basic functions.  Sometimes, there are 
+			specific functions that are required (think accounting software), but often times people are using what is available to 
+			implement their own specific process.  Make it simple to use by providing the basic constructs, and let the user put in 
+			whatever additional complexity they need.  That way your software is *simple* and *complex* at the same time.  
+			</p>
+			
+			<h6><a name="Parallel-programming">Why Parallel Programming and Multicore Chips Won't Change How We Program as Much as Advertised</a>
+				<br>3:02am Jan 6th, 2007</h6>
+			<p>I know, everyone thinks that parallel programming and multicore chips are the future of programming.  I know, 
+			what I am writing probably amounts to a reasonable level of heresy at this point.  But guess what?  Users don't care 
+			about parallel processing anymore than they care about how RAM works or what a hash table is.  They care about 
+			getting their work done.  
+			</p>
+			<p>How do they work?  They work at business machines.  They work on single tasks.  They work 
+			in systems that are backed by large central databases stored on large servers in another room.  The only time they 
+			are waiting is when the program is retrieving information from the database.  The slowest part of that is the database 
+			retrieval itself.  That's not happening on our users new multicore processor.  The database processing has long been 
+			happening on multicore systems, which admittedly will see a boost in effective speed, but they are already written to be 
+			parallel.  The results from the server are then 
+			transmitted to the user's computer and are instantly displayed.  This is even true of C# systems, which have another 
+			layer on top of the operating system (as opposed to C/C++).  The bottleneck of speed is not on the user's computer 
+			in the case of using a desktop application for work.  How about a web application?  Even with Internet Explorer bloat 
+			the computer is quite capable of rendering the web page very quickly once it has the data to render.  The web 
+			application user still has the same database bottleneck, and might also have a bandwidth bottleneck as well (in the 
+			case of movie viewing or other large file download).  
+			</p>
+			<p>All of this leads to me ask: what is the user getting out of multicore processors and our rush to make parallelizable 
+			programs mainstream?  Business users get effectively nothing.  The two resources they are most interested in are 
+			either a database or information off the internet, neither of which are slowed by the processing power of the 
+			computer at this point.  Non-business users do gain an edge in various forms of game code processing.  I can imagine 
+			that rendering engines, and physics engines get a massive boost in productivity from multiple cores.  That means game 
+			programmers are indeed going to be on the forefront of parallelization and parallel capable languages.  I also think the 
+			average user will get something out of multicore processors, and largely that is the ability to listen to music without 
+			interrupting their other programs.  Users will get some functional boost 
+			because they are using multiple programs at once, not because they are using a single program that is written to take 
+			advantage of a multicore processor.  
+			</p>
+			<p>Does this mean that we need to spend a lot of time rewritting every business 
+			application in whatever new parallel language that comes along?  I doubt it.  Who are we helping with all this 
+			clamour about new parallel processing capabilities and how we need new languages to handle the change over?  Maybe 
+			it's us.  We're tired of doing everything in a single processor, especially if we have multiple threads.  We know that we 
+			might be able to get things to compile faster, reducing our wait time.  It certainly isn't for the users of business software.
+			</p>
+			
+			<h6>More on Consulting through Guru.com<br>4:20am Jan 4th, 2007</h6>
+			<p>I really enjoy contracting work.  It might not be for everybody, but it is surely for me.  
+			I like getting to do something different everyday if I want to.  I like the pursuit of work, 
+			the feeling of glee when you get the job and then the feeling of completion when you are done.  
+			</p>
+			<p>Most people don't like to consult the way that I do.  I spend most of my time working on jobs I found through
+			<a href="http://guru.com">Guru.com</a>.  I have been selected for five jobs through the site, at an average of $721 
+			per job. [Note: these numbers do not reflect jobs that were completed outside of the Guru system, nor do they count 
+			the job that I am receiving equity in a company for completing.] In the last round of bidding I did, I bid on 7 jobs, 
+			and have received responses (the first step to being awarded 
+			the job) from 4 of them.  In the past, this number has hovered around 1 response for every 10-11 jobs that I bid.  I am not sure
+			if these most recent numbers are an abberration, or if they represent the beginning of a trend of improved bid success.  Either 
+			way, it is possible to make a decent living working through Guru.com.  It appears to snowball to some extent, allowing you 
+			to bid larger and larger jobs with a higher and higher bid acceptance rate.  
+			</p>
+			<p>There seems to be a commonly held feeling that it is not possible for a U.S. based programmer (or company) to make a decent living
+			from sites similar to Guru.com, mostly due to the global competition from programmers working in countries with a dollar exchange advantage.  
+			While I admit there are lots of jobs that fly under my minimum bid amount, I don't believe that there is as high a preference for "cheap" labor 
+			as is generally assumed, particularly if that cheaper labor doesn't speak and write clear English.  I also cannot understate the impact 
+			of being dependable.  Some customers will pay double the amount to a programmer that is dependable that they might with an 
+			unknown quantity.  For that reason it is vitally important that I provide clear, concise, and repeated information to my customers, 
+			as soon as that information is available.
+			</p>
+			<p>Lastly, it appears there is a serious talent drain occuring in the IT industry.  Anecdotal evidence appears to bear this out.  
+			Everything from interviewers reporting that the candidates are woefully underskilled, to large companies complaining about the 
+			rates that they are having to pay programmers.  This only helps someone who is working on small to midrange contracts through 
+			the online contracting websites.  As more and more programmers are swallowed in corporate america, small companies have less and less
+			option when they need a quick program written.  Increased demand leads to increased prices, even with respect to a global market.  It 
+			is for this reason that I am not particularly concerned about getting more work.  The work is there, you just have to provide good 
+			customer service.  Your customers will thank you for it, and they'll be willing to pay you more too. 
+			</p>
+			
+			<h6><a name="consulting-through-guru">Consulting through Guru.com</a><br>3:48am Jan 4th, 2007</h6>
+			<p>Reproduced below is a post that I made to <a href="http://Joelonsoftware.com">Joel On Software</a> 
+			in the Business of Software section.  Several people expressed a great deal of interest in this topic and 
+			seemed to appreciate the post, so I thought I would repost it here as well.  Further discussion on the topic 
+			of online contracting (using a web site to find most of your contracting work) will follow.
+			-- Joshua Volz, Volz Software</p>
+			
+			<p><img src="img/ldquo.png"/>I have only really been working on Guru.com for about a month, so YMMV on all tactics 
+			in this post.</p>
+			<p>
+			What is the first question: why Guru?  I picked Guru because they seem to have a good 
+			amount of ongoing jobs and a good job add rate.  Additionally, and maybe even more 
+			important, you pay to bid jobs through Guru and it's not entirely what I would call cheap.  
+			Some places don't seem to take money up front, but take a percentage when you do a job 
+			through them.  I wanted to look more professional and more serious, so I went with a site 
+			where I had to pay to bid as a "vendor."  I feel this gives the impression of it really being 
+			a business, instead of some kid in his mother's basement.  It seems to keep out the riff-
+			raff and it sets a minimum cost of doing business precedent.  If you are bidding against 
+			kids and professionals from countries that use another currency (giving them the price 
+			advantage) you are at a serious disadvantage.  If the customer wants a professional, and 
+			they know you paid to have the opportunity to bid their job, they are going to be more 
+			accepting of slightly higher prices, especially per hour.
+			</p>
+			<p>
+			There are plenty of .NET website projects on Guru.  I would say there are even more 
+			PHP jobs, and occasionally finding something for Python, Perl or Ruby (in terms of web 
+			work).  It's important to note that a lot of the people posting don't care what technology 
+			you use as long as you provide a *solution* to their problem.  I haven't done any web 
+			work (I am mostly doing C# Winforms type stuff) so I can't really speak to that market's 
+			specifics.  
+			</p>
+			<p>
+			So far, I have been awarded three smaller sized jobs through Guru.com.  <br>
+			- A C# Winforms cleanup job for $265.  <br>
+			- A python web scrapping program for $198. <br>  
+			- A C# Winforms job as a companion for a pretty wild project (I cannot go into this at 
+			this point) for $900.  <br>
+			</p>
+			<p>
+			Admittedly, these aren't huge numbers.  But, given that I was working until recently with 
+			zero references I feel like it's decent.  I have already been called back by the first job to 
+			do another job for $250.  I have a big C# Winforms job that I am awaiting approval on 
+			that I found through Guru.com ($14,600).  I met someone through Guru.com that I am 
+			now going to partner up with on a project (for 50% equity, I do the programming and 
+			technical stuff).  Finally, I have another job that is in a holding pattern, but I have spoken 
+			to the customer and they seem to want to go with me ($1800).  
+			</p>
+			<p>
+			At this point, I am using Guru.com to augment my "in-person" contracting gigs.  For that 
+			purpose, I find it is very useful.  If you have an afternoon off, and you want to try to 
+			make a quick $150-200, you can probably do so.  
+			</p>
+			<p>
+			From a marketing perspective I try to answer all the questions that I would have as a 
+			customer.  A good starter list of questions to answer:
+			</p>
+			<p>
+			1. Can you do it?  (References, experience in the particular problem space, etc.)
+			</p>
+			<p>
+			2. How long will it take? 
+			</p>
+			<p>
+			3. How much will it cost?  How do we pay you?  Escrow services, invoices, payment 
+			schedules, et al should be clearly spelled out. <br>
+			[2, 3 are amply discussed everywhere, I am not going to even try to squeeze their 
+			discussion in here.]
+			</p>
+			<p>
+			4. Can we trust you? (NDAs, escrow through guru.com, references, etc.)
+			</p>
+			<p>
+			5. When are you available?  Are you doing this as a side gig to your day job, or are you a 
+			full-time contractor?
+			</p>
+			<p>
+			6. ***Important*** How well do you communicate?  Can you speak the language they 
+			speak fluently?  Can they call you on the phone (I have found some people just feel better 
+			about working with you once they have spoken to you on the phone)?  Do you answer 
+			emails quickly?  Do you keep them informed on what is going on with the project?  Do 
+			you tell them how the project will work beforehand (meaning, your development plan - 
+			I'll get into this later)?
+			</p>
+			<p>
+			7. Where are you located?  Are you close to their office?  Can you meet them face to 
+			face?  Will you be in the area later on?  I mention that I am US based provider as some 
+			customers seem to have a preference for that.
+			</p>
+			<p>
+			8. Any questions they have specifically put in the bid.  Answer them all to the best of 
+			your ability.  
+			</p>
+			<p>
+			9. What technology are you going to use to solve their problem and why?  Sometimes I 
+			feel like a Windows and .NET platform salesman.  Having a strong grasp of what 
+			technologies are good for what problem types is invaluable here.  For example, I had a 
+			client that had to have a script that would run on FreeBSD and Windows.  Python turned 
+			out to be my winner there, even though I am largely a C# (and lately Boo) centric shop.  
+			If you are doing a website for someone, PHP is probably your best bet, unless they 
+			specifically mention Django or Rails.  
+			</p>
+			<p>
+			10. What makes you different?  Why should we pick you?  Try to interject some 
+			personality into your website and a little into your bids.  They are hiring a person and 
+			they want to know that person is going to be good to work with (I guess this goes back to 
+			communication).  
+			</p>
+			<p>
+			11. [Sometimes, optional] Explanations about how the Guru process works.  What step 
+			do they have to take?  What happens next if they pick you?  Often, customers are new to 
+			the Guru system.  Helping them acclimate ups your chances of them liking you and your 
+			bid.
+			</p>
+			<p>
+			Strategy:
+			</p>
+			<p>
+			My strategy is to answer as many of these questions as I can in the bid.  I have a template 
+			that I fill in with the specifics of the job.  I cannot overstate the usefulness of Direct 
+			Access (http://nagarsoft.com) during the bid writing process for text replacements.  
+			Sometimes you can get a feel from the job post what kind of amount the poster is looking 
+			to spend.  Try to be close to that number.  If you aren't, you aren't likely to get the job.  I 
+			wouldn't do anything huge for a small amount (you have to make money or you won't 
+			stay in business), but some flexibility is necessary when competing with other contractors 
+			that live in countries with other currencies.
+			</p>
+			<p>
+			Since I started with zero references on Guru, I felt it was important to have a plan to build 
+			up a client body quickly.  My plan was to underbid small projects in order to get 
+			references.  If you underbid a small project, you aren't losing that much money (since it's 
+			small), but you still get a reference, presumably that is good, and a happy customer since 
+			they got a quality job for cheap.  Those customers seem to come back.  This strategy is 
+			betting that sometime down the road that customer is going to need something big.  The 
+			big jobs are where you make your money.  Having established yourself with the customer 
+			as fair, competent and all around good they will accept your bid and explanation for the 
+			larger project (a.k.a. yes, it is more, and here is why...").  
+			</p>
+			<p>
+			When you have no references, you have a credibility problem.  The way I tried to work 
+			around it (and it appeared to work) was to build credibility in other areas.  You should 
+			have a solid website that talks about your contracting business, your experience, shows 
+			examples, and testimonials if you have any from previous customers.  With every bid, I 
+			send screen shot examples of my previous work, particularly if I have a screen shot of a 
+			program similar to the job.  As soon as I got my first reference, I made sure to put a quote 
+			from him in every bid.  I mentioned that he was happy with my work, and that he had 
+			endorsed me through Guru.  Endorsement appears to be a higher level of praise than 
+			merely saying you did a good job.  
+			</p>
+			<p>
+			On Guru there is a ranking system.  The system is based on customer feedback and the 
+			amount of money you have earned (total and in the past year, I believe).  Obviously, 
+			doing more projects for more money is going to give you an advantage in rating.  As soon 
+			as I start breaking the top 100 (I think there are ~1800 contractors in my subsection of 
+			programming) I am likely going to start mentioning that in my bids and putting that 
+			number on my website.  
+			</p>
+			<p>
+			Communication is another way to set you apart from your competition.  Clearly written 
+			English and availability (via phone, fax, email, IM, carrier pigeon, telepathy) are 
+			important in the bidding process.  They shouldn't ever wonder "how can I get a hold of 
+			this guy?"  My templates for bidding are largely based on the suggested templates from 
+			Guru.  The Guru people aren't new to this process and they have put together a pretty 
+			comprehensive list of examples to help you develop your working documents (bids, 
+			proposals, time tables, etc.).  
+			</p>
+			<p>
+			Your development plan can set you apart.  If you lay out what you are going to do for the 
+			customer, and how you are going to go about providing them a solution, then you are 
+			setting the stage for a successful project.  In my case, I use an iterative approach.  I 
+			explain that basically I will code, they will approve and suggest changes, repeatedly until 
+			they are happy.  They seem to like this because they get feedback often (and it shows 
+			signs of progress) and it's open ended enough that they feel like they are going to get 
+			what they want.  I am finding that they are even a little open ended on the length of the 
+			project if you explain that this is how you work, and that you have had lots of success 
+			working this way in the past.  Most business people know that quality takes time.  If you 
+			tell them that you are going to keep working on it until they are happy, then when they 
+			first look at the prototype and it's not perfect yet, they don't panic.  You told them it 
+			wouldn't be perfect and that you were going to fix it as soon as they told you how to 
+			make it perfect.  [Side note: I have found this works really well with women customers.  
+			They seem to respond well to getting what they want, having the option to change their 
+			mind, and being listened to.  I suppose that might be a human thing, but in my experience 
+			so far it has worked exceedingly well with women.]
+			</p>
+			<p>
+			Final Note:
+			</p>
+			<p>
+			Always provide a solution.  You aren't a programmer anymore.  Now you fix problems.  
+			If the problem requires that you whip up a quick spreadsheet for the customer, do it.  If it 
+			requires you download new software, test it out, call companies to get quotes, do it.  If it 
+			requires you learning a new platform or skill, do it.  If it means going to Fry's and buying 
+			another ethernet cable and a NIC card and putting it in a computer, do it.  If it means 
+			finding someone else who knows how to do something really specific that they need, do 
+			it.  If it requires changing paper in their printer because they are having a horrible day and 
+			the printer being out of paper almost brings them to tears, for God's sake do it.  [Note: I 
+			didn't make this story up, it happened to me today.]  If the toilet is backed up, call your 
+			uncle the plumber and get him to do it.  If you simply cannot do whatever they need 
+			(maybe it requires a license or something) find someone to do it.  Long story short, do it.  
+			Get them a solution, technological or otherwise as soon as possible.  If you can't get them 
+			a full solution for a while, get them a partial one immediately that you can later convert to 
+			a full solution.  
+			</p>
+			<p>
+			Sorry this was so long.  I might repost this with alterations on my blog.  If anyone has 
+			questions, feel free to post, I'll be checking back, or email me directly.  <img src="img/rdquo.png"/>
+			</p>
+			
+			<h6><a name="bidding-against-foreign-nationals">Bidding Against Foreign Nationals</a><br>12:22am Oct 31st, 2006</h6>
+			<p>I read an interesting article calling for the boycotting of programming outsourcing webistes, such as elance.com and RentACoder(RAC).
+			The original article can be found here: </p><p><a href="http://irfanhabib.wordpress.com/2006/10/30/why-developers-should-boycott-online-outsourcing-services/">
+			<i>Why Developers Should Boycott Online Outsourcing Services</i></a> </p>
+			<p>I think this topic merits some discussion, but more importantly merits some thought on how programmers from the US should react to these relatively 
+			new market conditions.</p>
+			<p>
+			I have recently started working from some of these websites.  There does seem to be an unrealistic expectation in terms of the price of 
+			software development.  And, it is important to note that the price of software development is different to the price of software.  Software 
+			is resold many times over, allowing the development costs to be spread over many sales.  This means that software can be sold for less than 
+			the cost of developing it.  
+			</p>
+			<p>
+			If you are an employer that is trying to pay someone to develop software directly for you, that software only has one possible customer, you.  
+			Therefore, economically, it should cost more than any software that has more potential customers.  Nobody posting jobs on these outsourcing sites 
+			seems to understand that.  Factor in the percentage that the job site takes, and you get a situation where it is not reasonable for US based programmers 
+			to develop custom 
+			software for a single client, especially when you start comparing it to having a day job.
+			</p>
+			<p>
+			The programmers from countries that have lower costs of living, lower living standards, and where dollars have more buying power, obviously have an 
+			advantage in bidding against American contractors.  American contractors have to provide better service and better quality to overcome the natural 
+			price advantage that programmers from other countries have.  Strong written and verbal english skills are a good place to start.  Customer service is 
+			another potential differentiator.  Being in the same time zone can also help matters.  
+			</p>
+			<p>
+			I think these sites do have their place in American contractor businesses though.  They are good places to get new recurring customers.  If you do a 
+			good job with your first project, then it can lead to larger (and more profitable) future projects.  One strategy would be to do very small (less than 1 day) 
+			projects for very cheap, on par with the non-American programmers.  Smaller projects are better because you aren't losing as much money compared to 
+			doing a larger project at the non-American rates.  Think of it as a loss-leader project.  Assuming you do a good job, you have established a relationship 
+			with the customer.  They know you are going to do a good job, so they enlist your help in the future with other projects.  Ideally, those projects will be 
+			larger and because of your relationship with the customer you represent less of a risk (they know you are going to do good work) and provide other 
+			non-price related benefits (english, time zone, etc.), you are therefore worth more money.  
+			</p>
+			<p>Establishing the relationship also means that you can deal with the customer directly, effectively removing the need to pay the outsourcing site.  
+			According to the article that inspired this post, that can be up to 20%.  A 20% raise is nothing to scoff at.   
+			</p>
+			<p>A problem with this approach is that your customer will continue to expect cut-throat hourly rates in future projects.  By doing smaller projects for 
+			lower rates, the customer has the expectation that you are giving them an extremely low rate.  With larger projects, they assume that same rate is in effect 
+			but that the project is so much larger that your quote has now reached reasonable livable wage.  If your customer is resistant to this idea, you simply 
+			explain that the project is much larger, justifying the larger quote.  If you have done a good job on your smaller projects, then your customer is much less 
+			likely to take the risk on using someone other than you, even if they can get the same project for cheaper from an outsourcing website.  You also 
+			benefit from already knowing the customers' business, all the key employees, and the previous code you have already written for them.  Providing that you do not 
+			make your quote too far outside the comfort zone for your customer, they are going to use you.  
+			</p>
+			<p>Another alternative is to specialize in a particular market segment that foreigners would have trouble learning without being present at the company.  
+			Domain specific knowledge makes you more valuable no matter whether you are competing with foreign labor or not.  By focusing your efforts in a particular 
+			area, you can also become more efficient in that area.  Your specialization makes it easier to do certain projects, and for those projects you can come down 
+			on your price to the point where the other benefits your provide outweigh the difference in price.  
+			</p>
+			<p>American programmers (and, frankly, American companies and American labor in all economic sectors) need to start operating like they are competing 
+			with everyone in the world, instead of just everyone in the US.  The natural advantage that US programmers have is that they are in the US.  We 
+			have less cultural barriers to overcome, have a better command of the language of the client (presumably, English).  By using and emphasizing these natural 
+			advantages US programmers can continue to profit in the custom software industry.
+			</p>
+			
+			<h6><a name="dont-make-me-think">"Don't Make Me Think" and Being Behind the Times</a><br>6:49pm oct 26th, 2006</h6>
+			<p>So, this web thing is starting to really catch on.  It has a cool name ("Web 2.0") and people are making literally 
+			billions of dollars when they sell their companies.  Apparently, while I was in a cave in post bubble busting depression, the web recovered 
+			its footing.  While I was slaving away on C# Windows desktop applications, people were writing new browsers (or is that reusing old ones?). 
+			They were making sure cascading style sheets actually (well, ok, sorta) worked.  People were writing CMS frameworks and adopting Python 
+			and Ruby as the latest incarnations of "let's get it done fast" and then building frameworks on top of them with the overarching "let's get it 
+			done fast" burned in.
+			</p>
+			<p>While you were all fighting with browser compatability, javascript (which, incidentally, appears to be a decent language, despite its 
+			inclusion in web browsers), DHTML, AJAX and the latest social networking sites I was digging into corporate networks, writing management 
+			reports and typing "public void" way too many times.  Long story short, I am behind.  I have stunted the growth of my professional career 
+			without even realizing it, by not taking a job doing web programming 5 years ago.  
+			</p>
+			<p>I admit it.  The web doesn't excite me.  Yes, you can get it from everywhere.  Yes you don't have to install the software on the computer 
+			and yes, it's the quickest way to get to be a billionaire that requires less than $5,000 startup capital (and endless nights of staring into a computer 
+			monitor).  It just doesn't excite me.  I am not sure why.  I think it might have something to do with the idea that the browser has become just 
+			another platform to me.  Now, instead of using Java (I am pretending here that "write once, run anywhere" is actually real) I can write an 
+			application, test it on both IE and FireFox and suddenly I am cross platform (I am ignoring Safari and Opera - send me hate mail if you must).  
+			Interestingly, this brand of cross platform requires the mastery of at least 4 distinct languages or domain specific languages (Javascript, 
+			SQL, CSS, HTML, probably XML and whatever you write your web app in).  Honesty, if someone came to you and said, "okay, we can get your 
+			app everywhere and there's no installation on your customers' computers, but you have to write it in 6 languages, two of which use angle brackets, 
+			and two of which use curly braces" would you think "sweet that sounds like the future of programming?"
+			</p>
+			<p>I give up.  You win.  </p>			
+			<p>Let the healing begin.  I started by making a couple of websites.  First this one.  Yeah, I know, stunning isn't it?  Then I made one for a product 
+			that I put out, called <a href="http://llamacarboncopy.com">Llama Carbon Copy</a>.  The first version of that site was horrible.  I let people tear it 
+			apart on a public forum so that I could get some good ideas.  In the end, it took me two weeks, but the site is looking much better than it did before 
+			I started working on it.  In that time, I realized that I am not paying enough attention to the design details of things that I make.  From one poster I got 
+			an semi-solicited mockup of my program, only with all the things he would change just to make it look better.  <a href="img/fix-the-ui.jpg">
+			<img src="img/fix-the-ui.jpg" style="Float:Left; width:150px; height:125px;padding: 3px; border:none;"/> </a>To be fair, 
+			the guy is right.  I realized he was right as I was reading his email to me.  I tried to hire him to tell me what I was doing wrong in other places.  This guy had 
+			already spent probably 20-30 minutes straightening out my design flaws, without the thought of reward.  I figured he would at least accept some kind of 
+			compensated role in that capacity.  I got a resounding "No".  He said he was too busy to help me.
+			</p>
+			<p>Left alone again, I turn to my backup plan: read.  I headed out to Border's and acquired "Don't Make Me Think" by Steve Krug.  It took me a couple of 
+			evenings to read and absorb.  This book is excellent for putting you in the state of mind to do great design.  Not only does he point out specific ways to 
+			improve a website, he gives you general ideals to guide you when you enter unfamiliar territory.  I highly recommend it.</p>
+			<p>Unfortunately, now I am forced to do something about my previous ignorance.  Now, I am forced to rework the look and feel of my product.  Now, I 
+			am forced to rework the websites I have up.  Now, I am forced to learn about web programming.</p>
+			
+			<p>The only advantage I have is that I have spent the last six months learning Ruby in my spare time.  Not Ruby on Rails mind you, just normal everyday 
+			desktop Ruby.  Border's again comes to the rescue.  Armed with my two Ruby on Rails books, I am going to start to learn about this mysterious and 
+			scary world that is web application programming.  
+			</p>
+			
+			<h6><a name="jedi-code">Fun with Jedi Code</a><br>11:00am Oct 18th, 2006</h6>
+			<p>
+			<a href="http://img171.imageshack.us/img171/7330/10072006012349em5.jpg">
+			<img align="right" style="margin: 5px;" src="http://img171.imageshack.us/img171/6713/10072006012216jg7.jpg" /></a>
+			I recently stumbled onto a very interesting website.  Someone calling themself the "Software Jedi" decided 
+			it would be an interesting exercise to write 30 small applications in 30 days.  This feat in itself is worth reading 
+			about:			
+			</p>
+			<p><a href="http://www.anappaday.com/downloads/">http://www.anappaday.com/downloads/</a></p>
+			<p>Some of these small applications are pretty cool.  I am particularly fond of two of them: 
+			<a href="http://www.anappaday.com/downloads/2006/10/day-22-jedi-window-dock.html">Jedi Window Dock (JWD)</a>
+			and 
+			<a href="http://www.anappaday.com/downloads/2006_09_01_anappadaydownloads_archive.html">Jedi Concentrate</a>
+			(Search for "Jedi Concentrate").  Concentrate dims all but the focused window in an attempt to help you concentrate 
+			on that particular window.  Excellent if you are trying to avoid email or IM notificatons.  Jedi Window Dock is my 
+			favorite though.  The concept is to allow you to dock multiple application windows in a single tabbed browsing environment.  
+			</p>
+			<p>This has two central affects.  First, it allows you to group applications (or instances of applications) that are related 
+			into a single environment.  This can be helpful if you need to have your IDE, your source control program, two web browsers 
+			showing the results of the code you are writing, and a testing application open all at once.  This collecting of related 
+			programs allows for an easy, single click environment to work on a particular project.  The second effect is that it 
+			gets rid of the clutter in your taskbar.  Anything that gets rid of clutter there is a big win in my book.  
+			</p>
+			<p>I am right now using the JWD to collect together several instances of Notepad2 (which doesn't offer 
+			internal tabbed browsing) that all hold files related to HippoFondue.com.  The JWD gives every program the chance to have 
+			tabbed browsing.  What more can you want from an application that was created in less than four hours?			
+			</p>
+			
+			<h6><a name="llama-carbon-copy">Llama Carbon Copy Available for Sale</a><br>10:00am Oct 14th, 2006</h6>
+			<p>Llama Carbon Copy is an instantaneous file backup tool.  It watches the folders you select for file changes, and 
+			copies them to another folder.  
+			It can also synchronize any or all of the folders it is watching.  Designed to be easy to use, getting started doesn't 
+			require a PhD in computer science.  
+			Download a trial <a href="http://www.llamacarboncopy.com">here</a>.
+			</p>
+			
+			<h6><a name="new-volzsoftware.com-layout">New Volz Software website layout</a><br>6:05am Oct 11th, 2006</h6>
+			<p>Just got the new layout for Volz Software uploaded.  I think it is a lot cleaner and better organized than my original attempt 
+			from a year ago.  Check it out <a href="http://volzsoftware.com/">here</a>.
+			</p>
+			
+			<h6><a name="report-architecture">Report architecture done; just need cross tab support</a><br>6:00pm Oct 10th, 2006  </h6>
+			<p>Alright, so it took me nearly all of yesterday (as in, 12 hours from 2pm when I woke up to 2am when I stopped working) 
+			to get the program so that it would work how I wanted it to.  I am pleased with the outcome.  I had to get a bit nasty with 
+			some anonymous methods and generics in order to do what I wanted, but in the end it worked out.  
+			</p>
+			<p>Also, I just want to throw out there that I am impressed with Microsoft SQL Server Management Express.  It's got a 
+			horribly long name for something that is pretty good at what it does.  It is sort of a combination of Query Analyzer and 
+			Enterprise Manager.  If you haven't used it yet, and you are using SQL Server 2005 (even Express) you should give it a try.  
+			</p>
+			<p>
+			Alright, so the goal was to make a reasonable working reporting engine.  Mostly, this involves the creation of some 
+			simple things that when combined together make up a report.  The header, footer, and scoping information are all straight forward.  
+			The data output is also relatively straight forward.  In my case this meant looping through the data table rows and returning a 
+			string that matched the format that I was trying to produce (either a pipe delimited text file, or an html file).  
+			</p>
+			<p>The first challenge comes in when you have to total some of the columns.  In my case, those columns happened to be money values 
+			and were internally represented as doubles.  However, I didn't want to have to write frameworks for every type of column (string, double, int, DateTime, etc.).  
+			I was hoping to get away with writing 1 accumulator that was flexible enough that I could mutate it on instantiation to do what I wanted.  My targets 
+			were counting accumulators and summing accumulators.  Those are the most common accumulation types in the reports I was making.  In Ruby, this sort of 
+			thing can be accomplished very easily because Ruby has real closures, first class functions, and duck typing.  As it turns out, you can fake more of that 
+			in C# than I thought.  Here's a class:
+			</p>
+			<p class="code">
+				<span class="keyword">public </span><span class="keyword">class </span>Accumulator< T > {<br>
+&nbsp;&nbsp;<span class="keyword">protected </span>T _it;<br>
+&nbsp;&nbsp;<span class="keyword">protected </span>AccumulatorDelegate _d;<br>
+&nbsp;&nbsp;<span class="keyword">public </span>delegate T AccumulatorDelegate(T val, T it);<br>
+&nbsp;&nbsp;<span class="keyword">public </span>Accumulator(AccumulatorDelegate d) { _d = d; }<br>
+&nbsp;&nbsp;<span class="keyword">public </span>Accumulator(T init, AccumulatorDelegate d) : this(d) { _it = init; }<br>
+&nbsp;&nbsp;<span class="keyword">public </span>T Accumulation {<span class="keyword">get{</span>	 <span class="keyword">return </span>_it; } }<br>
+&nbsp;&nbsp;<span class="keyword">public </span>T Accumulate(T datum) { <span class="keyword">return </span>_it = _d(datum, _it); }<br>
+&nbsp;&nbsp;<span class="keyword">public </span><span class="keyword">override </span><span class="keyword">string </span>ToString() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if(</span>	_it != null) <span class="keyword">return </span>_it.ToString();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return </span>"";<br>
+&nbsp;&nbsp;}<br>
+}
+			</p>
+			<p>Now, you are looking at that and saying to yourself "wtf?"  Am I right?  Yeah, me too.  I wanted a class that would allow me to use it for any type.  
+			The generics handle that pretty well.  It does seem to give you a level of flexibility that I am only used to getting in Ruby or Scheme.  Personally, I was 
+			more interested in passing an anonymous function to the object on instantiation that would do the accumulation for that object.  This gives you a lot 
+			of flexibility with the object you are creating.  I had the constructor take a two argument delegate so that the delegate could be passed the internal 
+			value of the accumulation "_it".  Otherwise there is no way to refer to that value when you are defining your anonymous method.  It's a kludge, I agree, but 
+			it worked for me in this relatively simple case.  So, there you have it, I am instantiating an object with any type, and passing it a delegate that works on that 
+			type, effectively making the object a closure in a very loose sense of the word.  
+			</p>
+			<p>You can create an accumulator by doing something similar to the following:</p>
+			<p class="code">
+Accumulator<double> sum = <span class="keyword">new </span>Accumulator<double>(<br>
+&nbsp;&nbsp;<span class="keyword">delegate(</span>	<span class="keyword">double </span>x, <span class="keyword">double </span>it) { <span class="keyword">return </span>it += x; })<br>
+Accumulator<double> max = <span class="keyword">new </span>Accumulator<double>(<br>
+&nbsp;&nbsp;<span class="keyword">delegate(</span>	<span class="keyword">double </span>x, <span class="keyword">double </span>it) {<span class="keyword">if(</span>	 it < x ) <span class="keyword">return </span>x; else <span class="keyword">return </span>it;})
+			</p>
+			<p>The final thing that is interesting is the implementation of the ToString().  It basically calls the ToString() of the _it internal variable.  But, what this 
+			does is allows you to put the accumulator object (actually, many of them) into a Hashtable or ArrayList, and then when you get it back you don't have 
+			to cast it to a specific type of accumulator, you just call the ToString() and it gives you the information you want.  In my case, I needed a string representation 
+			of everything, so I can just use the ToString().  This is especially useful when you have to accumulate values from columns of different types. </p>
+			
+			<p>Next Time:  The kludgy world of CrossTabs.  Never leave home without your CrossTab.  </p>
+			
+			<h6><a name="report-gui">Report GUI done</a><br>1:10pm Oct 6th, 2006</h6>
+			<p>The report GUI was easy for two reasons.  First, I have my own library of controls that fit into my architecture and work well 
+			with my home grown code generation tool for making CRUD apps.  Second, for this incarnation of the reporting engine we are not having dynamic 
+			scope controls based on the report.  With fixed inputs, things become a lot easier.  Here's a screen shot:<br /><br />
+			<a href="img/report1.jpg"><img style="height: 90%; width: 90%;" src="img/Report1.jpg" /></a>
+			</p>
+			
+			<p>I am going to run a quick errand, then I will get back to this.  Stay tuned for new Roll-Your-Own-Reporting-Engine updates, same Hippo time, same Hippo channel.  
+			</p>
+			
+			<h6><a name="insanity-of-roll-your-own">On reports, Excel and the insanity of roll your own</a><br>12:14pm Oct 6th, 2006</h6>
+			<p>I am about to roll my own very simple reporting engine.  Why would I do that?  Because I don't have Crystal installed on this machine, 
+			and my Empower application isn't approved.  Therefore, to make the reports that I need to show off next Tuesday I am going to roll my own.  Madness 
+			you say?  We're going to find out.  
+			</p>
+			<p>I would only consider this because I need 5 reports.  The first two are very similar, and the remaining three all have the same layout.  Therefore, 
+			it is conceivably possible to write a very, very simple layout mechanism over the weekend.  I am doing that in addition to dumping the data to an 
+			Excel spreadsheet, since that is what the office I am writing this for uses most of the time.  
+			</p>
+			<p>My intention is to use HTML to format the report.  Since everybody has a browser installed on their machine, it is easy to read for almost anyone who 
+			needs to see it.  The rest of this project is in C#, so I am going to continue using it for this portion of the project.  
+			</p>
+			<p>As things proceed over the weekend, I will be posting screen shots and possibly some of the code.  I know you are all aghast with anticipation 
+			like a giddy school girl opening Fight Club for the first time.</p>
+			
+			
+			
+			<h6><a name="archive">The Archive</a></h6>
+			<p>Previous articles can be found <a href="archive.html">here</a>.</p>
+		
+	  </div>
+	</div>
+	<div id="footer">
+		<p>Content By <a href="http://volzsoftware.com">Joshua Volz | Volz Software</a><br>
+		Webdesign Inspired by <a href="http://jaspervandermeer.net" title="Homepage Webdesigner">Jasper van der Meer | webdesignstudio</a></p>
+	</div>
+</div>
+</body>
+</html>
+
+
+
